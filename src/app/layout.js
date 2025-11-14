@@ -1,7 +1,7 @@
-import { Geist, Geist_Mono, Dm_sans, Inter } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const dmSans = Dm_sans({
+const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
