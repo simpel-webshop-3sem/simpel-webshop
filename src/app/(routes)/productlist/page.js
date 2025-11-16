@@ -7,6 +7,7 @@ import SearchBar from "./components/Searchbar";
 export default async function ProductList({ searchParams }) {
   const params = await searchParams;
   const category = params?.category || "";
+  const search = params?.search || "";
 
   return (
     <div>
@@ -16,18 +17,21 @@ export default async function ProductList({ searchParams }) {
       </div>
       <div className="grid grid-cols-3 gap-4">
         <Suspense fallback={<div>Loading products...</div>}>
-          <FetchProduct category={category} />
+          <FetchProduct category={category} search={search} />
         </Suspense>
       </div>
     </div>
   );
 }
 
-const FetchProduct = async ({ category }) => {
+const FetchProduct = async ({ category, search }) => {
   const url = category
     ? `https://dummyjson.com/products/category/${category}`
-    : `https://dummyjson.com/products/`;
+    : search
+      ? `https://dummyjson.com/products/search?q=${search}`
+      : `https://dummyjson.com/products/`;
 
+  console.log(url);
   const response = await fetch(url);
   const { products } = await response.json();
 
