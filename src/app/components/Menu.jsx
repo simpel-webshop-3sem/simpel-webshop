@@ -20,7 +20,7 @@ const menu = () => {
             </li>
             <RxDividerVertical className="h-7 w-full" />
             <li className="cursor-pointer transition-all hover:font-black">
-              <Link className="text-xl font-bold" href="/">
+              <Link className="text-xl font-bold" href="/cart">
                 Cart
               </Link>
             </li>

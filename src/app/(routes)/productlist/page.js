@@ -7,7 +7,6 @@ import Menu from "../../components/Menu";
 import CartList from "../productlist/components/CartList";
 import AddToCart from "../productlist/components/AddToCart";
 
-
 export default async function ProductList({ searchParams }) {
   const params = await searchParams;
   const category = params?.category || "";
@@ -15,7 +14,6 @@ export default async function ProductList({ searchParams }) {
 
   return (
     <div className="min-h-screen">
-      <Menu />
       <div className="pt-24 pr-[440px]">
         <div className="flex flex-row justify-between gap-4 p-4">
           <FilterCategories />
@@ -74,7 +72,7 @@ const FetchProduct = async ({ category, search }) => {
           </div>
           <p className="text-sm font-bold text-black">{product.price} $</p>
         </div>
-        <AddToCart product={product}  id={product.id} />
+        <AddToCart product={product} id={product.id} />
       </div>
     </article>
   ));
