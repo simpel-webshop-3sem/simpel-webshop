@@ -2,8 +2,9 @@ import { Suspense } from "react";
 import { IoStar } from "react-icons/io5";
 import { IoStarOutline } from "react-icons/io5";
 import BackButton from "./components/BackButton";
-import Amount from "./components/Amount";
 import ProductImg from "./components/ProductImg";
+import CartList from "../../productlist/components/CartList";
+import AddToCart from "../../productlist/components/AddToCart";
 
 // params er et objekt som indeholder ruteparametre, i dette tilfælde id'et fra URL'en.
 
@@ -34,6 +35,7 @@ export default async function details({ params }) {
       <div>
         <main className="m-8">
           <BackButton />
+          <CartList />
           <div className="mt-6 flex gap-6">
             <div>
               <ProductImg product={product} />
@@ -62,12 +64,7 @@ export default async function details({ params }) {
                 </p>
               </div>
               <div className="flex flex-col">
-                <div className="mb-4 flex gap-2">
-                  <Amount />
-                </div>
-                <button className="bg-foreground text-background mr-6 cursor-pointer self-start justify-self-end rounded-xl px-16 py-2 font-sans font-bold uppercase transition">
-                  add to cart
-                </button>
+                <AddToCart product={product} id={product.id} />
               </div>
             </div>
           </div>

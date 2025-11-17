@@ -5,6 +5,7 @@ import FilterCategories from "./components/FilterCategories";
 import SearchBar from "./components/Searchbar";
 import Menu from "../../components/Menu";
 import CartList from "../productlist/components/CartList";
+import AddToCart from "../productlist/components/AddToCart";
 
 export default async function ProductList({ searchParams }) {
   const params = await searchParams;
@@ -46,13 +47,15 @@ const FetchProduct = async ({ category, search }) => {
   return products.map((product) => (
     <article key={product.id} className="flex flex-col bg-gray-200">
       <div className="relative aspect-square w-full bg-gray-100">
-        <Image
-          loading="eager"
-          alt={product.title}
-          src={product.thumbnail}
-          fill
-          className="object-cover"
-        />
+        <Link href={`/productsite/${product.id}`}>
+          <Image
+            loading="eager"
+            alt={product.title}
+            src={product.thumbnail}
+            fill
+            className="object-cover"
+          />
+        </Link>
         {product.stock < 10 && (
           <div className="absolute top-2 right-2 bg-white px-3 py-1 text-xs font-bold text-black">
             LOW STOCK
@@ -70,12 +73,7 @@ const FetchProduct = async ({ category, search }) => {
           </div>
           <p className="text-sm font-bold text-black">{product.price} $</p>
         </div>
-
-        <Link href={`/productsite/${product.id}`}>
-          <button className="w-full bg-gray-300 py-3 text-xs font-bold tracking-wider text-black uppercase hover:bg-gray-400">
-            ADD TO CART
-          </button>
-        </Link>
+        <AddToCart product={product}  id={product.id} />
       </div>
     </article>
   ));
