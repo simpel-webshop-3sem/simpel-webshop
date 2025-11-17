@@ -58,13 +58,15 @@ const FetchProduct = async ({ category, search }) => {
         )}
       </div>
 
-      <div className="flex flex-col gap-2 p-4">
+      <div className="flex flex-1 flex-col justify-between gap-2 p-4">
         <div className="flex items-start justify-between">
           <div className="flex-1 text-black">
-            <h3 className="text-sm font-bold tracking-wider uppercase">
+            <h3 className="mb-4 text-sm font-bold tracking-wider uppercase">
               {product.title}
             </h3>
-            <p className="mt-1 text-xs tracking-wider uppercase">DESCRIPTION</p>
+            <p className="mt-1 mb-4 text-xs tracking-normal">
+              {product.description}
+            </p>
           </div>
           <p className="text-sm font-bold text-black">{product.price} $</p>
         </div>
