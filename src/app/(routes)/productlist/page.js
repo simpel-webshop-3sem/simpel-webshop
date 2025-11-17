@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import FilterCategories from "./components/FilterCategories";
 import SearchBar from "./components/Searchbar";
+import Menu from "../../components/Menu";
+import CartList from "../productlist/components/CartList";
 
 export default async function ProductList({ searchParams }) {
   const params = await searchParams;
@@ -10,15 +12,21 @@ export default async function ProductList({ searchParams }) {
   const search = params?.search || "";
 
   return (
-    <div>
-      <div className="mb-4 flex flex-row justify-between gap-4 p-4">
-        <FilterCategories />
-        <SearchBar />
-      </div>
-      <div className="grid grid-cols-3 gap-4">
-        <Suspense fallback={<div>Loading products...</div>}>
-          <FetchProduct category={category} search={search} />
-        </Suspense>
+    <div className="min-h-screen">
+      <Menu />
+      <div className="flex pt-24">
+        <div className="flex-1">
+          <div className="mb-4 flex flex-row justify-between gap-4 p-4">
+            <FilterCategories />
+            <SearchBar />
+          </div>
+          <div className="grid grid-cols-3 gap-4 p-4 pt-0">
+            <Suspense fallback={<div>Loading products...</div>}>
+              <FetchProduct category={category} search={search} />
+            </Suspense>
+          </div>
+        </div>
+        <CartList />
       </div>
     </div>
   );
