@@ -25,7 +25,7 @@ export default function Home() {
           </p>
           <a
             href="/productlist"
-            className="bg-foreground flex items-center justify-center rounded-full px-8 py-4 text-xl font-bold text-black transition hover:bg-gray-300"
+            className="bg-foreground/90 flex items-center justify-center rounded-full px-8 py-4 text-xl font-bold text-black transition hover:bg-gray-300/90"
           >
             <HoverText text="explore" />
           </a>

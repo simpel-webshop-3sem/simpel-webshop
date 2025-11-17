@@ -40,7 +40,7 @@ body {
   span {
     position: relative;
     display: inline-block;
-    text-shadow: 0 1.2em 0 #b2c73a;
+    text-shadow: 0 1.2em 0 #d9ff00;
     transform: translateY(0);
     transition: transform 0.15s ease-in-out;
     transition-delay: calc(sibling-index() * 0.05s);
@@ -68,7 +68,7 @@ body {
   span {
     position: relative;
     display: inline-block;
-    text-shadow: 0 1.2em 0 #e0fa4c;
+    text-shadow: 0 1.2em 0 #d9ff00;
     transform: translateY(0);
     transition: transform 0.15s ease-in-out;
     transition-delay: calc(sibling-index() * 0.05s);
