@@ -18,7 +18,7 @@ const CategoryElement = ({ categories }) => {
     <select
       value={currentCategory}
       onChange={handleCategoryChange}
-      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-black focus:ring-2 focus:ring-blue-500 focus:outline-none"
     >
       <option value="">All Products</option>
       {categories.map((category, index) => (
