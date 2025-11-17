@@ -1,6 +1,7 @@
 "use client";
 import useStore from "@/app/store/addtocart";
 import BackButton from "../productsite/[id]/components/BackButton";
+import Image from "next/image";
 import { FaTrashAlt } from "react-icons/fa";
 
 export default function CartPage() {
@@ -27,6 +28,14 @@ export default function CartPage() {
                 key={item.id}
                 className="flex items-center justify-between text-xs tracking-wider text-black uppercase"
               >
+                <Image
+                  loading="eager"
+                  alt={item.title}
+                  src={item.thumbnail}
+                  width={100}
+                  height={100}
+                  className="object-cover"
+                ></Image>
                 <span className="flex-1 pr-2">
                   {item.title} × {item.qty || 1}
                 </span>
