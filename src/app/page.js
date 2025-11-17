@@ -16,7 +16,6 @@ export default function Home() {
       </video>
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative z-10">
-        <Menu />
         <div className="items-left flex min-h-screen w-xl flex-col justify-end p-10 text-white">
           <h1 className="mb-6 text-5xl font-bold">Welcome to Webshoppen</h1>
           <p className="mb-8 max-w-2xl text-lg">
