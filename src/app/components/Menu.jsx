@@ -7,7 +7,9 @@ const menu = () => {
     <div className="fixed top-0 left-1/2 z-50 w-full -translate-x-1/2 p-4 px-4">
       <ul className="flex rounded-md bg-white/50 px-8 py-4 text-black shadow-lg backdrop-blur-sm">
         <li className="mx-5 flex-1 overflow-hidden font-semibold">
-          <HoverText text="webshoppen" />
+          <Link href="/">
+            <HoverText text="webshoppen" />
+          </Link>
         </li>
         <li>
           <ul className="mx-5 flex items-center gap-7">
