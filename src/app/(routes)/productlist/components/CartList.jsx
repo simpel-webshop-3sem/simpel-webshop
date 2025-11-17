@@ -21,13 +21,13 @@ const CartList = () => {
           <ul className="flex flex-col gap-2">
             {cart.length === 0 && (
               <li className="text-xs tracking-wider text-black uppercase">
-                Cart is empty
+                Cart Is Empty
               </li>
             )}
             {cart.map((item) => (
               <li
-                key={item.id}
-                className="flex items-center justify-between text-xs tracking-wider text-black uppercase"
+              key={item.id}
+              className="flex items-center justify-between text-xs tracking-wider text-black uppercase"
               >
                 <span className="flex-1 pr-2">
                   {item.title} × {item.qty || 1}
@@ -38,7 +38,7 @@ const CartList = () => {
                 <button
                   className="ml-2 bg-red-300 px-2 py-1 hover:bg-red-400"
                   onClick={() => removeFromCart(item.id)}
-                >
+                  >
                   <FaTrashAlt className="text-xs text-white" />
                 </button>
               </li>
@@ -59,7 +59,7 @@ const CartList = () => {
             <button
               className="w-full bg-gray-300 py-3 text-xs font-bold tracking-wider text-black uppercase hover:bg-gray-400 disabled:opacity-50"
               disabled={!cart.length}
-            >
+              >
               Checkout
             </button>
           </Link>
