@@ -9,11 +9,13 @@ const CartList = () => {
   const total = cart.reduce((sum, i) => sum + (i.price || 0) * (i.qty || 1), 0);
 
   return (
-    <div className="w-lg p-4 pt-24">
-      <div className="bg-gray-200 p-4">
-        <h2 className="mb-4 text-sm font-bold tracking-wider text-black uppercase">
-          Shopping Cart
-        </h2>
+    <div className="fixed top-40 right-0 w-md p-4">
+      <div className="min-h-[500px] border-l border-black/20 pl-4">
+        <div className="flex min-h-[500px] flex-col bg-gray-200 p-4">
+          <h2 className="mb-4 text-sm font-bold tracking-wider text-black uppercase">
+            Shopping Cart
+          </h2>
+
 
         <div className="flex flex-col gap-4">
           <ul className="flex flex-col gap-2">

@@ -7,6 +7,7 @@ import Menu from "../../components/Menu";
 import CartList from "../productlist/components/CartList";
 import AddToCart from "../productlist/components/AddToCart";
 
+
 export default async function ProductList({ searchParams }) {
   const params = await searchParams;
   const category = params?.category || "";
@@ -15,20 +16,18 @@ export default async function ProductList({ searchParams }) {
   return (
     <div className="min-h-screen">
       <Menu />
-      <div className="flex pt-24">
-        <div className="flex-1">
-          <div className="mb-4 flex flex-row justify-between gap-4 p-4">
-            <FilterCategories />
-            <SearchBar />
-          </div>
-          <div className="grid grid-cols-3 gap-4 p-4 pt-0">
-            <Suspense fallback={<div>Loading products...</div>}>
-              <FetchProduct category={category} search={search} />
-            </Suspense>
-          </div>
+      <div className="pt-24 pr-[440px]">
+        <div className="flex flex-row justify-between gap-4 p-4">
+          <FilterCategories />
+          <SearchBar />
         </div>
-        <CartList />
+        <div className="grid grid-cols-3 gap-4 p-4 pt-0">
+          <Suspense fallback={<div>Loading products...</div>}>
+            <FetchProduct category={category} search={search} />
+          </Suspense>
+        </div>
       </div>
+      <CartList />
     </div>
   );
 }
@@ -63,13 +62,15 @@ const FetchProduct = async ({ category, search }) => {
         )}
       </div>
 
-      <div className="flex flex-col gap-2 p-4">
+      <div className="flex flex-1 flex-col justify-between gap-2 p-4">
         <div className="flex items-start justify-between">
           <div className="flex-1 text-black">
-            <h3 className="text-sm font-bold tracking-wider uppercase">
+            <h3 className="mb-4 text-sm font-bold tracking-wider uppercase">
               {product.title}
             </h3>
-            <p className="mt-1 text-xs tracking-wider uppercase">DESCRIPTION</p>
+            <p className="mt-1 mb-4 text-xs tracking-normal">
+              {product.description}
+            </p>
           </div>
           <p className="text-sm font-bold text-black">{product.price} $</p>
         </div>
