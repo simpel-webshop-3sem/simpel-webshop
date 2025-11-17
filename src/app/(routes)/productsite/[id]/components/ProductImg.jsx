@@ -20,7 +20,7 @@ const ProductImg = ({ product }) => {
           <img
             src={mainImg}
             alt={product.title}
-            className="col-1 row-1 bg-gray-500 object-cover"
+            className="col-1 row-1 bg-gray-200 object-cover"
           />
           <p className="font-inter col-1 row-1 self-start justify-self-end rounded-bl-xl bg-[#00000080] px-4 py-2 font-semibold text-white">
             {product.availabilityStatus}
@@ -42,7 +42,7 @@ export async function SmallImgs({ product, setMainImg }) {
       key={index}
       src={img}
       alt={`${product.title} ${index + 1}`}
-      className="h-24 w-24 bg-gray-500 object-cover"
+      className="h-24 w-24 bg-gray-200 object-cover"
       onClick={() => setMainImg(img)}
     />
   ));
