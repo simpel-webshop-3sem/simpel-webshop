@@ -42,7 +42,7 @@ export async function SmallImgs({ product, setMainImg }) {
       key={index}
       src={img}
       alt={`${product.title} ${index + 1}`}
-      className="h-24 w-24 bg-gray-200 object-cover"
+      className="h-24 w-24 bg-gray-200 object-cover cursor-pointer"
       onClick={() => setMainImg(img)}
     />
   ));
