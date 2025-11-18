@@ -63,7 +63,7 @@ export default function CartPage() {
             </div>
           </div>
           <button
-            className="w-full bg-gray-300 py-3 text-xs font-bold tracking-wider text-black uppercase hover:bg-gray-400 disabled:opacity-50"
+            className="w-full cursor-pointer bg-gray-300 py-3 text-xs font-bold tracking-wider text-black uppercase hover:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-50"
             disabled={!cart.length}
           >
             Checkout
