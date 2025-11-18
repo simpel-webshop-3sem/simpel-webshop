@@ -9,7 +9,7 @@ export default function CartPage() {
   const removeFromCart = useStore((s) => s.removeFromCart);
   const total = cart.reduce((sum, i) => sum + (i.price || 0) * (i.qty || 1), 0);
   return (
-    <div className="p-6">
+    <div className="mt-20 p-6">
       <BackButton />
       <div className="bg-gray-200 p-4">
         <h2 className="mb-4 text-sm font-bold tracking-wider text-black uppercase">
