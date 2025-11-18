@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import FilterCategories from "./components/FilterCategories";
 import SearchBar from "./components/Searchbar";
-import Menu from "../../components/Menu";
 import CartList from "../productlist/components/CartList";
 import AddToCart from "../productlist/components/AddToCart";
 

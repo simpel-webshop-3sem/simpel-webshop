@@ -19,7 +19,7 @@ export default async function details({ params }) {
   const PoductRating = Math.round(product.rating);
   const ProductStars = [...Array(5)].map((_, index) =>
     index < PoductRating ? (
-      <IoStar key={index} className="text-foreground mr-1 inline text-lg" />
+      <IoStar key={index} className="mr-1 inline text-lg text-yellow-400" />
     ) : (
       <IoStarOutline
         key={index}
